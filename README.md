@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/logo.png" alt="StellarCred logo" width="120">
+</p>
+
 # @stellar-cred/sdk
 
 **TypeScript SDK for StellarCred — on-chain behavioral reputation and credentials on Stellar Soroban**
@@ -6,6 +10,8 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Drips Wave](https://img.shields.io/badge/Drips-Wave-F59E0B)
+
+**Live app:** [stellarcred-app.vercel.app](https://stellarcred-app.vercel.app/)
 
 `@stellar-cred/sdk` wraps the [StellarCred](https://github.com/Stellar-Cred/stellarcred-contracts)
 Soroban contract so any Stellar dApp can read wallet reputation scores,
