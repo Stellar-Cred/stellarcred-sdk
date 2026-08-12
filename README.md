@@ -57,11 +57,19 @@ const { txHash } = await client.issueCredential({
 
 ## React Hooks
 
+Hooks are exported from the `@stellarcred/sdk/hooks` subpath, not the main
+entry point — this keeps the main entry free of React's `useState`/
+`useEffect`, so pure functions like `credentialIcon` or `truncateAddress`
+can be imported into React Server Components without tripping a "Client
+Component" boundary error. `@stellarcred/sdk/hooks` is built with a
+`"use client"` directive.
+
 Configure a default client once during app startup, then use the hooks
 anywhere in your component tree:
 
 ```tsx
-import { configureStellarCred, useIdentity, useCredential, useLeaderboard } from "@stellarcred/sdk";
+import { configureStellarCred } from "@stellarcred/sdk";
+import { useIdentity, useCredential, useLeaderboard } from "@stellarcred/sdk/hooks";
 
 configureStellarCred({
   network: "testnet",
