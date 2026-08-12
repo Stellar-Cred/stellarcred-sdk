@@ -1,13 +1,13 @@
-# @stellarcred/sdk
+# @stellar-cred/sdk
 
 **TypeScript SDK for StellarCred — on-chain behavioral reputation and credentials on Stellar Soroban**
 
-![npm](https://img.shields.io/npm/v/@stellarcred/sdk)
+![npm](https://img.shields.io/npm/v/@stellar-cred/sdk)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Drips Wave](https://img.shields.io/badge/Drips-Wave-F59E0B)
 
-`@stellarcred/sdk` wraps the [StellarCred](https://github.com/Stellar-Cred/stellarcred-contracts)
+`@stellar-cred/sdk` wraps the [StellarCred](https://github.com/Stellar-Cred/stellarcred-contracts)
 Soroban contract so any Stellar dApp can read wallet reputation scores,
 query credentials, and (for authorized issuers) mint or revoke credentials
 — with a Freighter wallet adapter and a set of React hooks included.
@@ -15,7 +15,7 @@ query credentials, and (for authorized issuers) mint or revoke credentials
 ## Installation
 
 ```bash
-npm install @stellarcred/sdk
+npm install @stellar-cred/sdk
 ```
 
 `react` is an optional peer dependency, only required if you use the hooks
@@ -24,7 +24,7 @@ exported from this package.
 ## Quick Start
 
 ```ts
-import { StellarCredClient, ScoreTier } from "@stellarcred/sdk";
+import { StellarCredClient, ScoreTier } from "@stellar-cred/sdk";
 
 const client = new StellarCredClient({
   network: "testnet",
@@ -44,7 +44,7 @@ const canProceed = await client.verifyAndGate("GABC...WXYZ", 500);
 // Issuing a credential requires a connected Freighter wallet matching
 // the `issuer` address, and that address must be an active, registered
 // StellarCred issuer authorized for this credential type.
-import { connectWallet } from "@stellarcred/sdk";
+import { connectWallet } from "@stellar-cred/sdk";
 
 const issuerAddress = await connectWallet();
 const { txHash } = await client.issueCredential({
@@ -57,19 +57,19 @@ const { txHash } = await client.issueCredential({
 
 ## React Hooks
 
-Hooks are exported from the `@stellarcred/sdk/hooks` subpath, not the main
+Hooks are exported from the `@stellar-cred/sdk/hooks` subpath, not the main
 entry point — this keeps the main entry free of React's `useState`/
 `useEffect`, so pure functions like `credentialIcon` or `truncateAddress`
 can be imported into React Server Components without tripping a "Client
-Component" boundary error. `@stellarcred/sdk/hooks` is built with a
+Component" boundary error. `@stellar-cred/sdk/hooks` is built with a
 `"use client"` directive.
 
 Configure a default client once during app startup, then use the hooks
 anywhere in your component tree:
 
 ```tsx
-import { configureStellarCred } from "@stellarcred/sdk";
-import { useIdentity, useCredential, useLeaderboard } from "@stellarcred/sdk/hooks";
+import { configureStellarCred } from "@stellar-cred/sdk";
+import { useIdentity, useCredential, useLeaderboard } from "@stellar-cred/sdk/hooks";
 
 configureStellarCred({
   network: "testnet",

@@ -7,5 +7,5 @@ export * from "./utils";
 // `useState`/`useEffect`, which trips Next.js's Server Component boundary
 // check even for consumers who only import pure functions (e.g.
 // `credentialIcon`) from this package. Import hooks from
-// "@stellarcred/sdk/hooks" instead, which is built as its own
+// "@stellar-cred/sdk/hooks" instead, which is built as its own
 // "use client" entry point.

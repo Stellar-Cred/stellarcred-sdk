@@ -1,4 +1,4 @@
-# Contributing to @stellarcred/sdk
+# Contributing to @stellar-cred/sdk
 
 StellarCred participates in the [Drips Stellar Wave](https://www.drips.network/wave/stellar).
 Issues in this repo are tagged with a complexity label and a Point value.
